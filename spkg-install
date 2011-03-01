@@ -7,8 +7,7 @@ unset CFLAGS CXXFLAGS SHAREDFLAGS
 export ATLAS="$SPKG_LOCAL"
 export BLAS="$SPKG_LOCAL"
 export LAPACK="$SPKG_LOCAL"
-# Make sure umfpack is *not* picked up from Ubuntu:
-export UMFPACK="None"
+export UMFPACK="$SPKG_LOCAL"
 
 cd src
 python setup.py install
