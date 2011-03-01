@@ -18,10 +18,10 @@ else
     export LAPACK
     export LDFLAGS="-shared"
 fi
-export FC="$SAGE_LOCAL/bin/sage_fortran"
-export F77="$SAGE_LOCAL/bin/sage_fortran"
-export F90="$SAGE_LOCAL/bin/sage_fortran"
-export F95="$SAGE_LOCAL/bin/sage_fortran"
+export FC=gfortran
+export F77=gfortran
+export F90=gfortran
+export F95=gfortran
 
 
 # This avoid problems on some systems -- until we officially
@@ -54,4 +54,3 @@ if [ $? -ne 0 ]; then
     echo "Error installing scipy."
     exit 1
 fi
-
