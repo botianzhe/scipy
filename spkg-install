@@ -4,10 +4,14 @@ set -e
 
 unset CFLAGS CXXFLAGS SHAREDFLAGS
 
+# Use libraries from Qsnake:
 export ATLAS="$SPKG_LOCAL"
 export BLAS="$SPKG_LOCAL"
 export LAPACK="$SPKG_LOCAL"
 export UMFPACK="$SPKG_LOCAL"
+
+# This fixes an "undefined reference to `MAIN__'" linking error with gfortran:
+export LDFLAGS="-shared"
 
 cd src
 python setup.py install
